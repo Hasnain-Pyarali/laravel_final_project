@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Arr;
 use App\Models\Post;
 
+Route::post('/posts_processing', [PostController::class, 'store'])->name('posts.store');
+
 Route::get('/', function () {
     return view('home', ['title' => 'Home Page']);
 });
@@ -54,3 +56,15 @@ Route::get('/contact', function () {
     return view('contact' , ['title'=> 'Contact']);
 });
 
+
+Route::get('/add_post', function () {
+    return view('add_post' , ['title'=> 'Add Post']);
+});
+
+use App\Http\Controllers\PostController;
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('items', PostController::class);
