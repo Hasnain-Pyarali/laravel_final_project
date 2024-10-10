@@ -61,6 +61,14 @@ body {
     margin-bottom: 10px;
 }
 
+.comment-container {
+    background-color: skyblue;
+    border-radius: 10px;
+    border: 2px solid black;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
 .footer {
     text-align: center;
     margin-top: 20px;

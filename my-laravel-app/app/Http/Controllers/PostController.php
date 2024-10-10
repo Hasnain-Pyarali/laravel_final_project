@@ -10,7 +10,6 @@ class PostController extends Controller
     // Store a new post in the database
     public function store(Request $request)
     {
-        $user = Auth::user();
         $post = Post::create([
             'title' => $request->input('title'),
             'body' => $request->input('body'),

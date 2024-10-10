@@ -1,17 +1,21 @@
 $(document).ready(function () {
-    const storeUrl = $('#postForm').attr('action');
+    const commentForm = $('#commentForm');
 
-    $('#postForm').on('submit', function (e) {
+    commentForm.on('submit', function (e) {
         e.preventDefault();
-        $('#responseMessage').empty();
+        $('#responseMessage').empty(); // Clear previous messages
+
         $.ajax({
-            url: storeUrl,
+            url: commentForm.attr('action'), // Get the action URL from the form
             method: 'POST',
-            data: $(this).serialize(),
+            data: commentForm.serialize(),
             success: function (response) {
                 // Display success message
                 $('#responseMessage').html('<div class="alert alert-success">' + response.message + '</div>');
-                $('#postForm')[0].reset();
+                commentForm[0].reset(); // Reset the form
+
+                // Append the new comment to the comments container
+                $('#commentsContainer').append('<div class="py-8 max-w-screen-md comment-container"><div>' + response.comment.body + '</div><div>' + response.comment.created_at + '</div></div>');
             },
             error: function (xhr) {
                 // Display validation errors
