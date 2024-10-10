@@ -12,7 +12,14 @@
         <p class="my-4 font-light">{{ $post->body }}</p>
         <a href="/posts" class="font-medium text-blue-500 hover:underline">&laquo; Back to posts</a>
     </article>
-
+    <form id="commentForm" action="{{ route('comments.store') }}" method="POST">
+        @csrf
+        <input type="text" name="body" placeholder="Votre Commentaire" class="form-control" id="body" required>
+        <br>
+        <input type="hidden" name="post_id" value="{{ $post->id }}"> <!-- Correctly using the post ID -->
+        <button type="submit" class="btn btn-primary">Commenter</button>
+    </form>
+    <br>
     <h2>Commentaires :</h2>
     <div id="commentsContainer">
         @foreach ($comments as $comment)
@@ -28,13 +35,6 @@
             @endif
         @endforeach
     </div>
-
-    <form id="commentForm" action="{{ route('comments.store') }}" method="POST">
-        @csrf
-        <input type="text" name="body" placeholder="Votre Commentaire" class="form-control" id="body" required>
-        <input type="hidden" name="post_id" value="{{ $post->id }}"> <!-- Correctly using the post ID -->
-        <button type="submit" class="btn btn-primary">Commenter</button>
-    </form>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ asset('js/comments.js') }}"></script>
 </x-layout>
