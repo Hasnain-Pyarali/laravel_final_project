@@ -17,6 +17,7 @@
         <input type="text" name="body" placeholder="Votre Commentaire" class="form-control" id="body" required>
         <br>
         <input type="hidden" name="post_id" value="{{ $post->id }}"> <!-- Correctly using the post ID -->
+        <br>
         <button type="submit" class="btn btn-primary">Commenter</button>
     </form>
     <br>

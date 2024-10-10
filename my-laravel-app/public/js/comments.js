@@ -11,7 +11,7 @@ $(document).ready(function () {
             data: commentForm.serialize(),
             success: function (response) {
                 // Display success message
-                alert("Comment added");
+                // alert("Comment added");
                 $('#responseMessage').html('<div class="alert alert-success">' + response.message + '</div>');
                 commentForm[0].reset(); // Reset the form
                 // Append the new comment to the comments container
