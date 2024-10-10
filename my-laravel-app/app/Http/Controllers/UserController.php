@@ -16,7 +16,7 @@ class UserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
         ]);
-        sendMail($request->email,"<strong>Welcome feel free to make as much posts as you want and get commented anonymously</strong>","Welcome to the bloggers");
+        // sendMail($request->email,"<strong>Welcome feel free to make as much posts as you want and get commented anonymously</strong>","Welcome to the bloggers");
         return response()->json([
             'message' => 'User added successfully!',
         ], 201);
