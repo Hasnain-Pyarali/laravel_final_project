@@ -11,9 +11,9 @@ $(document).ready(function () {
             data: commentForm.serialize(),
             success: function (response) {
                 // Display success message
+                alert("Comment added");
                 $('#responseMessage').html('<div class="alert alert-success">' + response.message + '</div>');
                 commentForm[0].reset(); // Reset the form
-
                 // Append the new comment to the comments container
                 $('#commentsContainer').append('<div class="py-8 max-w-screen-md comment-container"><div>' + response.comment.body + '</div><div>' + response.comment.created_at + '</div></div>');
             },

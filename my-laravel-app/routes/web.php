@@ -5,14 +5,19 @@ use Illuminate\Support\Arr;
 use App\Models\Post;
 use App\Models\User;
 use App\Models\Comments;
-Route::post('/posts_processing', [PostController::class, 'store'])->name('posts.store');
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\MailController;
+
+Route::post('/send-mail', [MailController::class, 'sendMail'])->name('send.mail');
 
 Route::get('/', function () {
     return view('home', ['title' => 'Home Page']);
 });
 
-Route::get('/about', function () {
-    return view('about',['title' => 'About']);
+Route::get('/add_user', function () {
+    return view('add_user',['title' => 'Add User']);
 });
 
 Route::get('/posts/{post}', function (Post $post) {
@@ -35,11 +40,14 @@ Route::get('/add_post', function () {
     return view('add_post' , ['title'=> 'Add Post','authors' => User::all()]);
 });
 
-use App\Http\Controllers\PostController;
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('items', PostController::class);
+
+Route::resource('comments', CommentController::class);
+
+Route::resource('bloggers', UserController::class);
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('items', PostController::class);
-use App\Http\Controllers\CommentController;
-Route::resource('/comments', CommentController::class);
+
