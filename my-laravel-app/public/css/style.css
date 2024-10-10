@@ -1,5 +1,15 @@
 body {
     background-color: lightblue;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #4CAF50;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .form-group {
@@ -9,6 +19,7 @@ body {
 .form-label {
     display: block;
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .form-control {
@@ -25,15 +36,56 @@ body {
     background-color: #4CAF50;
     color: #fff;
     cursor: pointer;
+    font-size: 16px;
 }
 
 .btn:hover {
     background-color: #3e8e41;
 }
 
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 28px;
+    color: #333;
+}
+
 .post-container {
     background-color: #4CAF50;
     border-radius: 10px;
-    border-color: skyblue;
+    border: 2px solid skyblue;
+    padding: 15px;
     margin-bottom: 10px;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer p {
+    font-size: 14px;
+    color: #666;
+}
+
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+a:hover {
+    color: blue;
+}
+
+.info-group {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.profile h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
 }
