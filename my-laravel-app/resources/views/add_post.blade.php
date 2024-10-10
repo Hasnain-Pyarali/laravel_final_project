@@ -14,6 +14,14 @@
             <textarea id="body" name="body" class="form-control" required></textarea>
         </div>
         <div class="form-group">
+            <label for="author_id" class="form-label">Author:</label>
+            <select id="author_id" name="author_id" class="form-control">
+                @foreach($authors as $author)
+                    <option value="{{ $author->id }}">{{ $author->name }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="form-group">
             <button type="submit" class="btn btn-primary">Confirm</button>
         </div>
     </form>

@@ -14,7 +14,7 @@ class PostController extends Controller
         $post = Post::create([
             'title' => $request->input('title'),
             'body' => $request->input('body'),
-            'author_id' => 1,
+            'author_id' => $request->input('author_id'),
         ]);
         return response()->json([
             'message' => 'Post created successfully!',
