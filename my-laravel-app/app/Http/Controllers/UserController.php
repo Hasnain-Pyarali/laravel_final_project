@@ -7,17 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Comments;
 use App\Http\Controllers\MailController;
 use Mail;
-// function sendMail($toEmail,$messageContent)
-// {
-//     Mail::raw($messageContent, function ($message) use ($toEmail) {
-//         $message->to($toEmail)
-//                 ->subject('Message from Website');
-//     });
 
-//     return response()->json([
-//         'message' => 'Email sent successfully!',
-//     ]);
-// }
 class UserController extends Controller
 {
     public function store(Request $request)
@@ -26,7 +16,7 @@ class UserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
         ]);
-        // sendMail($request->email,"Welcome " + $request->name  + " to our blog");
+        sendMail($request->email,"<strong>Welcome feel free to make as much posts as you want and get commented anonymously</strong>","Welcome to the bloggers");
         return response()->json([
             'message' => 'User added successfully!',
         ], 201);
