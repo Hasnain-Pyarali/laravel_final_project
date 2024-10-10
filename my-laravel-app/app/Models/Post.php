@@ -9,7 +9,7 @@ use Illuminate\Support\Arr;
 class Post  extends Model
 {
     use HasFactory;
-    protected $fillable = ['body','title','author'];
+    protected $fillable = ['body','title','author_id'];
 
     public function author() : BelongsTo
     {

@@ -24,7 +24,8 @@ class PostController extends Controller
         $post = Post::create([
             'title' => $request->input('title'),
             'body' => $request->input('body'),
-            'author_id' => $user->id
+            'author_id' => $user->id,
+            
         ]);
 
         // Return a JSON response (for AJAX)
