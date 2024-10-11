@@ -1,19 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Arr;
 use App\Models\Post;
 use App\Models\User;
 use App\Models\Comments;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\MailController;
-
-Route::post('/send-mail', [MailController::class, 'sendMail'])->name('send.mail');
 
 Route::get('/', function () {
-    return view('home', ['title' => 'Home Page']);
+    return view('home', [
+        'title' => 'Home Page',
+        'posts' => Post::all(),
+    ]);
 });
 
 Route::get('/add_user', function () {
@@ -40,8 +39,12 @@ Route::get('/add_post', function () {
     return view('add_post' , ['title'=> 'Add Post','authors' => User::all()]);
 });
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::get('/home', function () {
+    return view('home', [
+        'title' => 'Home Page',
+        'posts' => Post::all(),
+    ]);
+});
 Route::resource('items', PostController::class);
 
 Route::resource('comments', CommentController::class);
