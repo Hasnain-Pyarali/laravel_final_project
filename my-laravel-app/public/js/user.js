@@ -10,7 +10,7 @@ $(document).ready(function () {
             data: $(this).serialize(),
             success: function (response) {
                 // Display success message
-                // alert("User created");
+                alert("User created");
                 $('#responseMessage').html('<div class="alert alert-success">' + response.message + '</div>');
                 $('#postForm')[0].reset(); // Reset the form after successful submission
             },
