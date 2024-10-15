@@ -1,15 +1,16 @@
 <x-layout>
     @slot('title'){{$title}}@endslot
     @foreach($posts as $post)
-        <article class="py-8 max-w-screen-md post-container">
-            <a href="/posts/{{$post->id}}" class="hover:underline">
-                <h2 class="mb-1 text-3xl tracking-tight font-bold text-gray-900">{{ $post->title }}</h2>
-            </a>
-            <div class="text-based">
-                <a href="#">{{ $post->author->name }} | {{$post->created_at->diffForHumans()}}</a>
+        <div class="card shadow-sm" style="margin-top: 5px; border-raiuds: 10px">
+            <div class="card-body">
+                <h1 class="card-title font-weight-bold">{{ $post->title }}</h1>
+                    
+                <h6 class="card-subtitle mb-3 text-muted"><i class="fas fa-user"></i>Posted by {{ $post->author->name }} - {{$post->created_at->diffForHumans()}}</h6>
+                    
+                <p class="card-text" style="line-height: 1.6;">{{ Str::limit($post->body,50) }}</p>
+                    
+                <a href="/posts/{{$post->id}}" class="btn btn-primary btn-sm">Read more &gt;&gt;</a>
             </div>
-            <p class="my-4 font-light">{{ Str::limit($post->body,50) }}</p>
-            <a href="/posts/{{$post->id}}" class="font-medium text-blue-500 hover:underline">Read more &raquo;</a>
-        </article>
+        </div>
     @endforeach
 </x-layout>

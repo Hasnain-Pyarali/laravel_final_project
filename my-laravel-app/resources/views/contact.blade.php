@@ -1,6 +1,5 @@
 <x-layout>
     @slot('title'){{$title}}@endslot
-  <!-- Grid row to hold two cards side by side -->
     <div class="row">
       <!-- First card -->
       <div class="col-md-6" style="margin-top: 50px;">
@@ -40,37 +39,4 @@
         </div>
       </div>
     </div>
-    <!-- <div class="card shadow-sm" style="max-width: 400px; margin: 20px auto; border-radius: 10px">
-        <img src="https://media.licdn.com/dms/image/v2/D4E03AQGZjXLckVoq9w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1707044923945?e=1734566400&v=beta&t=uUVJ9TEOI94BgqZAwFwZvU1qkHnMJy3eXQYdox0esqU" class="card-img-top" style="height: 200px; object-fit: cover" alt="Kylian Taguelmint">
-        
-        <div class="card-body">
-        <h5 class="card-title">Contact 1</h5>
-        
-        <p class="card-text"><strong>Name:</strong> Kylian Taguelmint</p>
-        
-        <p class="card-text"><strong>Email:</strong> <a href="mailto:kyliankylian2@gmail.com">kyliankylian2@gmail.com</a></p>
-        
-        <p class="card-text"><strong>Instagram:</strong> <a href="https://instagram.com/kylian.tglmnt" target="_blank">@kylian.tglmnt</a></p>
-        <p class="card-text"><strong>Twitter:</strong> <a href="https://www.twitter.com/elonmusk" target="_blank">@elonmusk</a></p>
-        
-        <a href="mailto:kyliankylian2@gmail.com" class="btn btn-primary">Contact Me</a>
-        </div>
-    </div>
-
-    <div class="card shadow-sm" style="max-width: 400px; margin: 20px auto; border-radius: 10px">
-    <img src="https://media.licdn.com/dms/image/v2/D4E03AQGZjXLckVoq9w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1707044923945?e=1734566400&v=beta&t=uUVJ9TEOI94BgqZAwFwZvU1qkHnMJy3eXQYdox0esqU" class="card-img-top" style="height: 200px; object-fit: cover" alt="Kylian Taguelmint">
-    
-    <div class="card-body">
-      <h5 class="card-title">Contact 2</h5>
-      
-      <p class="card-text"><strong>Name:</strong> Hasnain Pyarali</p>
-      
-      <p class="card-text"><strong>Email:</strong> <a href="mailto:kyliankylian2@gmail.com">hasnain.pyarali@epitech.eu</a></p>
-      
-      <p class="card-text"><strong>Instagram:</strong> <a href="https://www.instagram.com/hasnain_p786" target="_blank">@hasnain_p786</a></p>
-      <p class="card-text"><strong>Twitter:</strong> <a href="https://www.twitter.com/elonmusk" target="_blank">@elonmusk</a></p>
-      
-      <a href="mailto:hasnain.pyarali@epitech.eu" class="btn btn-primary">Contact Me</a>
-    </div>
-  </div> -->
 </x-layout>
