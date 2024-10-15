@@ -20,4 +20,14 @@ class PostController extends Controller
             'post' => $post
         ], 201); // HTTP status code 201 (Created)    }
     }
+    public function index(Request $request)
+    {
+        $search = $request->input('search');
+        if ($search) {
+            $posts = Post::where('title', 'like', "%{$search}%")->paginate(10);
+        } else {
+            $posts = Post::paginate(10);
+        }
+        return view('posts.index', compact('posts'));
+    }
 }

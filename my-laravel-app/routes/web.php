@@ -7,6 +7,7 @@ use App\Models\Comments;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\UserController;
+use Illuminate\Http\Request;
 
 Route::get('/', function () {
     return view('home', [
@@ -23,10 +24,18 @@ Route::get('/posts/{post}', function (Post $post) {
     return view('post',['title' => 'Single Post', 'post' => $post,'comments' => Comments::all()]);
 });
 
-Route::get('/posts', function () {
+Route::get('/posts', function (Request $request) {
+    $search = $request->input('search');
+
+    if ($search) {
+        $posts = Post::where('title', 'like', "%{$search}%")->paginate(10);
+    } else {
+        $posts = Post::paginate(10);
+    }
+
     return view('posts', [
         'title' => 'Blog Page',
-        'posts' => Post::all(),
+        'posts' => $posts,
     ]);
 });
 

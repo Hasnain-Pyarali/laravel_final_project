@@ -29,3 +29,7 @@ $(document).ready(function () {
         });
     });
 });
+
+function refreshSearch() {
+    window.location.href = "/posts"
+}
